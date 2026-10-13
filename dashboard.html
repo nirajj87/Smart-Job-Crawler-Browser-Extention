@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Smart Job Recruitment Full Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }
+    .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .panel { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); min-height: 500px; }
+    h2, h3 { margin-top: 0; color: #0073b1; }
+    button { padding: 10px 15px; background: #0073b1; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
+    button:hover { background: #005582; }
+    .danger-btn { background: #d9534f; }
+    .danger-btn:hover { background: #c9302c; }
+    .job-card { background: #fff; border: 1px solid #ddd; border-left: 4px solid #0073b1; padding: 12px; margin-bottom: 10px; border-radius: 4px; font-size: 13px; }
+    .date-header { background: #e9ecef; padding: 6px 10px; font-weight: bold; font-size: 14px; margin: 15px 0 8px 0; border-radius: 4px; color: #495057; }
+    .skills-tag { display: inline-block; background: #e1f5fe; color: #0288d1; padding: 2px 6px; border-radius: 4px; font-size: 11px; margin-top: 4px; margin-right: 4px; }
+    #scannedList, #historyList { max-height: 550px; overflow-y: auto; padding-right: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Panel: Live Scanned Jobs -->
+    <div class="panel">
+      <h2>Live Scanned Jobs</h2>
+      <p style="font-size: 12px; color: #666;">Open the extension on the Naukri or LinkedIn page. This tab opens only after that scan finishes, with the jobs ready to apply.</p>
+      <div id="scanStatus" style="font-size: 12px; font-weight: bold; color: green; margin-bottom: 10px;"></div>
+      <div id="scannedList">Waiting for the scan from the Naukri or LinkedIn page...</div>
+    </div>
+
+    <!-- Right Panel: Applied History (Date-wise grouped) -->
+    <div class="panel">
+      <h2>Application History Log</h2>
+      <button id="clearHistory" class="danger-btn">Clear All History</button>
+      <div id="historyList">No history recorded yet.</div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

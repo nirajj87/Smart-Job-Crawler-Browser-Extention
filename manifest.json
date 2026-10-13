@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Job Crawler & Full Dashboard",
+  "version": "2.2",
+  "description": "Full screen dashboard with experience filter, multi-page LinkedIn/Naukri scan, and date-wise apply history.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://*.naukri.com/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
